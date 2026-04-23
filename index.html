@@ -7,98 +7,189 @@
     <title>FaceSmoke - تواصل وشارك</title>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">
+                    <h1>FaceSmoke</h1>
+                    <p class="tagline">تواصل وشارك مع الأصدقاء</p>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Left Section - Marketing -->
+                <section class="left-section">
+                    <div class="marketing-content">
+                        <h2>اتصل بأصدقائك والعائلة</h2>
+                        <p>FaceSmoke يجعل من السهل البقاء على اتصال مع الأشخاص المهمين في حياتك.</p>
+                        <ul class="features">
+                            <li>✓ شارك الصور والفيديوهات</li>
+                            <li>✓ راسل الأصدقاء مباشرة</li>
+                            <li>✓ اكتشف محتوى جديد</li>
+                            <li>✓ انضم لمجموعات مهتمة</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Right Section - Auth Forms -->
+                <section class="right-section">
+                    <div class="form-container">
+                        <!-- Login Form -->
+                        <div class="form-box" id="login-box">
+                            <h2>تسجيل الدخول</h2>
+                            <form id="login-form" class="auth-form">
+                                <div class="form-group">
+                                    <input type="email" id="login-email" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="login-password" placeholder="كلمة المرور" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">دخول</button>
+                                <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
+                            </form>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="divider"></div>
+
+                        <!-- Signup Form -->
+                        <div class="form-box" id="signup-box" style="display: none;">
+                            <h2>إنشاء حساب جديد</h2>
+                            <form id="signup-form" class="auth-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <input type="text" id="signup-firstname" placeholder="الاسم الأول" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="signup-lastname" placeholder="الاسم الأخير" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="signup-email" placeholder="البريد الإلكتروني" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="signup-password" placeholder="كلمة مرور جديدة" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>تاريخ الميلاد</label>
+                                    <input type="date" id="signup-dob" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>الجنس</label>
+                                    <select id="signup-gender" required>
+                                        <option value="">اختر...</option>
+                                        <option value="male">ذكر</option>
+                                        <option value="female">أنثى</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success">إنشاء حساب</button>
+                            </form>
+                        </div>
+
+                        <!-- Toggle Button -->
+                        <div class="toggle-forms">
+                            <p id="toggle-text">ليس لديك حساب؟ <a href="#" id="toggle-link">إنشاء حساب جديد</a></p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>&copy; 2026 FaceSmoke. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="page">
+        <header class="dashboard-header">
+            <div class="header-content">
                 <h1>FaceSmoke</h1>
-                <p class="tagline">تواصل وشارك مع الأصدقاء</p>
+                <button id="logout-btn" class="btn btn-logout">تسجيل الخروج</button>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Left Section - Marketing -->
-            <section class="left-section">
-                <div class="marketing-content">
-                    <h2>اتصل بأصدقائك والعائلة</h2>
-                    <p>FaceSmoke يجعل من السهل البقاء على اتصال مع الأشخاص المهمين في حياتك.</p>
-                    <ul class="features">
-                        <li>✓ شارك الصور والفيديوهات</li>
-                        <li>✓ راسل الأصدقاء مباشرة</li>
-                        <li>✓ اكتشف محتوى جديد</li>
-                        <li>✓ انضم لمجموعات مهتمة</li>
-                    </ul>
-                </div>
-            </section>
+        <main class="dashboard-main">
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="profile-card">
+                        <div class="profile-avatar">👤</div>
+                        <h3 id="profile-name">مستخدم</h3>
+                        <p id="profile-email">email@example.com</p>
+                        <hr>
+                        <ul class="menu">
+                            <li><a href="#" onclick="showSection('feed')">الصفحة الرئيسية</a></li>
+                            <li><a href="#" onclick="showSection('friends')">الأصدقاء</a></li>
+                            <li><a href="#" onclick="showSection('messages')">الرسائل</a></li>
+                            <li><a href="#" onclick="showSection('groups')">المجموعات</a></li>
+                            <li><a href="#" onclick="showSection('profile')">الملف الشخصي</a></li>
+                        </ul>
+                    </div>
+                </aside>
 
-            <!-- Right Section - Auth Forms -->
-            <section class="right-section">
-                <div class="form-container">
-                    <!-- Login Form -->
-                    <div class="form-box" id="login-box">
-                        <h2>تسجيل الدخول</h2>
-                        <form id="login-form" class="auth-form">
-                            <div class="form-group">
-                                <input type="email" id="login-email" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" id="login-password" placeholder="كلمة المرور" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">دخول</button>
-                            <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
-                        </form>
+                <!-- Main Content -->
+                <section class="dashboard-content">
+                    <!-- Feed Section -->
+                    <div id="feed-section" class="content-section active">
+                        <h2>الصفحة الرئيسية</h2>
+                        <div class="post-box">
+                            <textarea placeholder="شارك أفكارك مع أصدقائك..."></textarea>
+                            <button class="btn btn-primary">نشر</button>
+                        </div>
+                        <div class="post">
+                            <h4>مرحباً بك في FaceSmoke! 🎉</h4>
+                            <p>تم إنشاء حسابك بنجاح. ابدأ بمشاركة لحظاتك مع الأصدقاء!</p>
+                        </div>
                     </div>
 
-                    <!-- Divider -->
-                    <div class="divider"></div>
-
-                    <!-- Signup Form -->
-                    <div class="form-box" id="signup-box" style="display: none;">
-                        <h2>إنشاء حساب جديد</h2>
-                        <form id="signup-form" class="auth-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <input type="text" id="signup-firstname" placeholder="الاسم الأول" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" id="signup-lastname" placeholder="الاسم الأخير" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="signup-email" placeholder="البريد الإلكتروني" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" id="signup-password" placeholder="كلمة مرور جديدة" required>
-                            </div>
-                            <div class="form-group">
-                                <label>تاريخ الميلاد</label>
-                                <input type="date" id="signup-dob" required>
-                            </div>
-                            <div class="form-group">
-                                <label>الجنس</label>
-                                <select id="signup-gender" required>
-                                    <option value="">اختر...</option>
-                                    <option value="male">ذكر</option>
-                                    <option value="female">أنثى</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-success">إنشاء حساب</button>
-                        </form>
+                    <!-- Friends Section -->
+                    <div id="friends-section" class="content-section">
+                        <h2>الأصدقاء</h2>
+                        <p>لا توجد طلبات أصدقاء حالياً</p>
                     </div>
 
-                    <!-- Toggle Button -->
-                    <div class="toggle-forms">
-                        <p id="toggle-text">ليس لديك حساب؟ <a href="#" id="toggle-link">إنشاء حساب جديد</a></p>
+                    <!-- Messages Section -->
+                    <div id="messages-section" class="content-section">
+                        <h2>الرسائل</h2>
+                        <p>لا توجد رسائل حالياً</p>
                     </div>
-                </div>
-            </section>
+
+                    <!-- Groups Section -->
+                    <div id="groups-section" class="content-section">
+                        <h2>المجموعات</h2>
+                        <p>لا توجد مجموعات حالياً</p>
+                    </div>
+
+                    <!-- Profile Section -->
+                    <div id="profile-section" class="content-section">
+                        <h2>الملف الشخصي</h2>
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <label>الاسم:</label>
+                                <p id="info-name">-</p>
+                            </div>
+                            <div class="info-item">
+                                <label>البريد الإلكتروني:</label>
+                                <p id="info-email">-</p>
+                            </div>
+                            <div class="info-item">
+                                <label>تاريخ الميلاد:</label>
+                                <p id="info-dob">-</p>
+                            </div>
+                            <div class="info-item">
+                                <label>الجنس:</label>
+                                <p id="info-gender">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2026 FaceSmoke. جميع الحقوق محفوظة.</p>
-        </footer>
     </div>
 
     <script src="scripts.js"></script>
